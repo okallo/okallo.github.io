@@ -1,50 +1,175 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - GitHub Pages</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Clayne Okallo </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?technology') center/cover;
+            height: 100vh;
+            color: white;
+        }
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Your LinkedIn tagline or a brief bio</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Clayne Okallo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 mb-3">Clayne Okallo</h1>
+            <p class="lead mb-4">Senior Software Engine</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Contact Me</a>
+        </div>
     </header>
-    
-    <section>
-        <h2>About Me</h2>
-        <p>Insert your summary or any personal statement here.</p>
-    </section>
-    
-    <section>
-        <h2>Experience</h2>
-        <ul>
-            <li>Job Title at Company | Duration</li>
-            <li>Another Job Title at Another Company | Duration</li>
-            <!-- Add more experiences -->
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Education</h2>
-        <ul>
-            <li>Degree at University | Year</li>
-            <!-- Add more education details -->
-        </ul>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4">
+                    <img src="https://source.unsplash.com/random/600x600/?portrait" alt="Profile" class="img-fluid rounded-circle profile-image shadow">
+                </div>
+                <div class="col-lg-8">
+                    <h2 class="mb-4">About Me</h2>
+                    <p>Experienced professional with expertise in [your field]. Passionate about [your key interests]. Strong background in [key skills or industries].</p>
+                    <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" class="btn btn-outline-dark" target="_blank">View LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Skill 1</li>
-            <li>Skill 2</li>
-            <!-- Add more skills -->
-        </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="mb-5 text-center">Professional Experience</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Current/Most Recent Position</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Company Name</h6>
+                            <p class="card-text">Key achievements and responsibilities:</p>
+                            <ul>
+                                <li>Achievement 1</li>
+                                <li>Achievement 2</li>
+                                <li>Achievement 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more experience cards as needed -->
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>Connect with me on <a href="https://www.linkedin.com/in/clayne-okallo-09234a96">LinkedIn</a></p>
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="mb-5 text-center">Skills & Expertise</h2>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>Technical Skills</h5>
+                            <ul class="list-unstyled">
+                                <li>Skill 1</li>
+                                <li>Skill 2</li>
+                                <li>Skill 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more skill categories as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="mb-5 text-center">Education</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5>Degree Name</h5>
+                            <p class="mb-1">University Name</p>
+                            <p class="text-muted">Years Attended</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="mb-5 text-center">Get in Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2013 Clayne Okallo. All rights reserved.</p>
+            <div class="social-links mt-3">
+                <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" class="text-white mx-2" target="_blank">LinkedIn</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
