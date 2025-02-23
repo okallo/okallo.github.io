@@ -19,7 +19,7 @@
         .badge.bg-cloud { background-color: #3182ce; }
         h3 { color: #2d3748; border-bottom: 3px solid #e2e8f0; padding-bottom: 0.5rem; }
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./backgroundpp.jpg') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./background2pp.jpg') center/cover;
             height: 70vh;
             color: white;
         }
@@ -91,11 +91,50 @@
             align-items: center;
             justify-content: center;
         }
+        .bg-dark-transparent {
+            background: rgba(105, 144, 159, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        
+        .achievement-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+        }
+        
+        .expertise-list i {
+            width: 25px;
+            text-align: center;
+        }
+        
+        .profile-card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 992px) {
+            .achievement-grid {
+                flex-direction: column;
+            }
+            .achievement-item {
+                border: none !important;
+                padding: 1rem 0 !important;
+            }
+        }
+        .bg-dark-clayne {
+            --bs-bg-opacity: 1;
+            background-color: rgb(48 69 91) !important;
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-clayne fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Clayne Okallo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -123,44 +162,92 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="section-padding gradient-bg">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 mb-4">
-                    <img src="./claynepp.png" alt="Profile" class="img-fluid rounded-circle profile-image shadow">
+<section id="about" class="section-padding bg-dark-clayne text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-5 mb-lg-0">
+                <div class="profile-card position-relative">
+                    <img src="./claynepp.png" alt="Clayne Okallo" 
+                        class="img-fluid rounded-3 shadow-lg border border-3 border-white">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark-transparent">
+                        <h3 class="mb-0">Clayne Okallo</h3>
+                        <p class="text-muted mb-0">Tech Lead & Cloud Architect</p>
+                    </div>
                 </div>
-                <div class="col-lg-8">
-                    <h2 class="mb-4">About Me</h2>
-                    <p class="lead">Dynamic Technical Lead with 10+ years experience in full-cycle software development, cloud computing, and DevOps. Proven expert in crafting scalable solutions using Python, JavaScript, .NET/C#, and database technologies (both relational and non-relational). Adept at leading cross-functional teams and implementing secure, maintainable systems with focus on software architecture and end-to-end solutions.</p>
-                    <div class="row mb-4">
+            </div>
+
+            <div class="col-lg-7">
+                <div class="ps-lg-4">
+                    <h2 class="display-5 fw-bold mb-4">Engineering Excellence Through Innovation</h2>
+                    <div class="achievement-grid mb-5">
+                        <div class="achievement-item border-end pe-4">
+                            <div class="display-6 fw-bold text-primary">15+</div>
+                            <div class="">Years Experience</div>
+                        </div>
+                        <div class="achievement-item border-end px-4">
+                            <div class="display-6 fw-bold text-primary">50+</div>
+                            <div class="">Projects Delivered</div>
+                        </div>
+                        <div class="achievement-item ps-4">
+                            <div class="display-6 fw-bold text-primary">10M+</div>
+                            <div class="">Users Impacted</div>
+                        </div>
+                    </div>
+
+                    <p class="lead mb-4">
+                        Seasoned technical leader specializing in architecting enterprise-grade solutions across cloud platforms, 
+                        IoT ecosystems, and intelligent automation systems. Proven track record in:
+                    </p>
+                    
+                    <div class="expertise-list row mb-5">
                         <div class="col-md-6">
-                            <h5>Contact</h5>
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt me-2"></i>1st Floor Arch Place, Nyangumi Road</li>
-                                <li><i class="fas fa-phone me-2"></i>+254 718 970 603 (Work)</li>
-                                <li><i class="fas fa-envelope me-2"></i>clayne.co25@gmail.com</li>
+                                <li class="mb-3">
+                                    <i class="fas fa-rocket text-primary me-2"></i>
+                                    <strong>Cloud-Native Architecture:</strong> AWS/GCP certified solutions
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-robot text-primary me-2"></i>
+                                    <strong>Intelligent Automation:</strong> RPA systems with 40% efficiency gains
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-shield-alt text-primary me-2"></i>
+                                    <strong>DevSecOps:</strong> CI/CD pipelines with embedded security
+                                </li>
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h5>Certifications</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-success">GIAC Python Coder (GPYC)</span>
-                            </div>
-                            <h5 class="mt-3">Top Skills</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-primary">Robotic Process Automation</span>
-                                <span class="badge bg-primary">Raspberry Pi</span>
-                                <span class="badge bg-primary">Arduino</span>
-                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="fas fa-brain text-primary me-2"></i>
+                                    <strong>AI Engineering:</strong> Production-grade ML models
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-network-wired text-primary me-2"></i>
+                                    <strong>Distributed Systems:</strong> Microservices at scale
+                                </li>
+                                <li class="mb-3">
+                                    <i class="fas fa-users-cog text-primary me-2"></i>
+                                    <strong>Technical Leadership:</strong> 15+ developer teams
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" class="btn btn-outline-dark" target="_blank">
-                        <i class="fab fa-linkedin me-2"></i>LinkedIn Profile
-                    </a>
+
+                    <div class="action-buttons">
+                        <a href="#contact" class="btn btn-primary btn-lg px-4 me-3">
+                            <i class="fas fa-paper-plane me-2"></i>Start Project
+                        </a>
+                        <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" 
+                            class="btn btn-outline-light btn-lg px-4" target="_blank">
+                            <i class="fab fa-linkedin me-2"></i>View Credentials
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Experience Section -->
 <section id="experience" class="section-padding bg-light">
@@ -539,7 +626,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-dark text-white py-5">
+<footer class="bg-dark-clayne text-white py-5">
     <div class="container text-center">
         <div class="social-links mb-4">
             <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" class="btn btn-outline-light btn-lg rounded-circle mx-2"
@@ -555,7 +642,7 @@
             </a>
         </div>
         <p class="mb-0">&copy; 2013 Clayne Okallo. All rights reserved.</p>
-        <p class="mt-2 text-muted">Nairobi, Kenya</p>
+        <p class="mt-2">Nairobi, Kenya</p>
     </div>
 </footer>
 
