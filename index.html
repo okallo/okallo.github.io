@@ -18,11 +18,7 @@
         .badge.bg-pm { background-color: #4a5568; }
         .badge.bg-cloud { background-color: #3182ce; }
         h3 { color: #2d3748; border-bottom: 3px solid #e2e8f0; padding-bottom: 0.5rem; }
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('./background2pp.jpg') center/cover;
-            height: 70vh;
-            color: white;
-        }
+        
         .profile-image {
             width: 200px;
             height: 200px;
@@ -128,7 +124,52 @@
         }
         .bg-dark-clayne {
             --bs-bg-opacity: 1;
-            background-color: rgb(48 69 91) !important;
+            background-color: rgb(32 55 71 / 83%) !important;
+        }
+
+        .hero-section {
+            height: 80vh;
+            background: linear-gradient(65deg, rgba(12, 24, 41, 0.56) 0%, rgb(36 72 93 / 12%) 100%), url(./background2pp.jpg) center / cover;
+        }
+    
+       .text-gradient {
+            background: linear-gradient(45deg, #fff, #e6f1ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        } 
+    
+        .bg-stack {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    
+        .hover-lift {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+    
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+    
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: white;
+            animation: blink 1s infinite;
+        }
+    
+        @keyframes blink {
+            0% { opacity: 1 }
+            50% { opacity: 0 }
+            100% { opacity: 1 }
         }
     </style>
 </head>
@@ -152,14 +193,56 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section d-flex align-items-center">
+     <!-- Hero Section -->
+    <!--<header class="hero-section d-flex align-items-center">
         <div class="container text-center">
             <h1 class="display-4 mb-3">Clayne Okallo</h1>
             <p class="lead mb-4">Tech Lead | Senior Software Engineer | Cloud-Native Solutions Expert</p>
             <a href="#contact" class="btn btn-primary btn-lg">Contact Me</a>
         </div>
-    </header>
+    </header> -->
+
+    <!-- Hero Section -->
+<header class="hero-section d-flex align-items-center position-relative overflow-hidden">
+    <div class="particles-background"></div>
+    
+    <div class="container position-relative text-center">
+        <div class="hero-content animate__animated animate__fadeInUp">
+            <h1 class="display-3 display-md-1 fw-bold mb-3 text-gradient">
+                Clayne Okallo
+            </h1>
+            
+            <div class="typewriter-container mb-4">
+                <p class="lead fs-3 fs-md-2 text-uppercase text-light opacity-75">
+                    <span class="typed-text"></span>
+                    <span class="cursor">&nbsp;</span>
+                </p>
+            </div>
+
+            <div class="tech-stack mb-5">
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <span class="badge bg-stack">Cloud Architecture</span>
+                    <span class="badge bg-stack">AI/ML Systems</span>
+                    <span class="badge bg-stack">DevOps Automation</span>
+                    <span class="badge bg-stack">IoT Solutions</span>
+                    <span class="badge bg-stack">Software Development</span>
+                </div>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center">
+                <a href="#contact" class="btn btn-primary btn-lg px-5 py-3 rounded-pill hover-lift">
+                    Start a Project
+                    <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+                <a href="https://linkedin.com/in/clayne-okallo-09234a96" 
+                   class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill hover-lift"
+                   target="_blank">
+                    <i class="fab fa-linkedin me-2"></i> Connect
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
 
     <!-- About Section -->
 <section id="about" class="section-padding bg-dark-clayne text-white">
@@ -690,6 +773,43 @@
             }
         });
     </script>
+    <script>
+        // Typewriter effect
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+        
+        const textArray = ["Enterprise Architect", "Cloud Native Expert", "AI Solutions Developer", "Technical Leader","Senior Software Engineer"];
+        const typingDelay = 200;
+        const erasingDelay = 100;
+        const newTextDelay = 2000;
+        let textArrayIndex = 0;
+        let charIndex = 0;
     
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+    
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex++;
+                if(textArrayIndex>=textArray.length) textArrayIndex=0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", function() {
+            if(textArray.length) setTimeout(type, newTextDelay + 250);
+        });
+    </script>
 </body>
 </html>
