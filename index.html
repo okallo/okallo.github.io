@@ -1,835 +1,748 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clayne Okallo - Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clayne Okallo - Tech Lead & Cloud Architect Portfolio"
+    />
+    <title>Clayne Okallo</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Preload critical resources -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      as="style"
+    />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      as="style"
+    />
 
-    <!-- Custom CSS -->
-    <style>
-        .badge.bg-purple { background-color: #6f42c1; }
-        .badge.bg-web1 { background-color: #4a5568; }
-        .badge.bg-web2 { background-color: #4299e1; }
-        .badge.bg-web3 { background-color: #38a169; }
-        .badge.bg-devops { background-color: #2d3748; }
-        .badge.bg-pm { background-color: #4a5568; }
-        .badge.bg-cloud { background-color: #3182ce; }
-        h3 { color: #2d3748; border-bottom: 3px solid #e2e8f0; padding-bottom: 0.5rem; }
-        
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-        }
-        .section-padding {
-            padding: 80px 0;
-        }
-        .timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-        .timeline-card {
-            position: relative;
-            margin-bottom: 30px;
-        }
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 15px;
-            width: 12px;
-            height: 12px;
-            background: #0d6efd;
-            border-radius: 50%;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: -2px;
-            top: 0;
-            width: 2px;
-            height: 100%;
-            background: #dee2e6;
-        }
-        .skill-badge {
-            font-size: 0.9rem;
-            margin: 2px;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.min.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-        #contact .card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-        
-        #contact input,
-        #contact textarea {
-            transition: all 0.3s ease;
-            border: 2px solid #dee2e6;
-        }
-        
-        #contact input:focus,
-        #contact textarea:focus {
-            border-color: #0d6efd;
-            box-shadow: none;
-        }
-        
-        .social-links .btn {
-            width: 50px;
-            height: 50px;
-            padding: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .bg-dark-transparent {
-            background: rgba(105, 144, 159, 0.7);
-            backdrop-filter: blur(5px);
-        }
-        
-        .achievement-grid {
-            display: flex;
-            justify-content: space-between;
-            margin: 2rem 0;
-        }
-        
-        .expertise-list i {
-            width: 25px;
-            text-align: center;
-        }
-        
-        .profile-card {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .profile-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        @media (max-width: 992px) {
-            .achievement-grid {
-                flex-direction: column;
-            }
-            .achievement-item {
-                border: none !important;
-                padding: 1rem 0 !important;
-            }
-        }
-        .bg-dark-clayne {
-            --bs-bg-opacity: 1;
-            background-color: rgb(32 55 71 / 83%) !important;
-        }
-
-        .hero-section {
-            /*height: 80vh;
-            background: linear-gradient(65deg, rgba(12, 24, 41, 0.56) 0%, rgb(36 72 93 / 12%) 100%), url(./background2pp.jpg) center / cover;*/
-            height: 80vh;
-            background: linear-gradient(65deg, rgb(33 133 68) 0%, rgb(28 80 111) 100%);
-        }
-        .education-section {
-            height: 60vh;
-            color: #dbe5e9;
-            background: linear-gradient(137deg, rgb(70 89 102) 0%, rgb(36 72 93 / 12%) 100%);
-        }
-       .text-gradient {
-            background: linear-gradient(45deg, #fff, #e6f1ff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        } 
-    
-        .bg-stack {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    
-        .hover-lift {
-            transition: all 0.3s ease;
-        }
-        
-        .hover-lift:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-    
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-    
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            background-color: white;
-            animation: blink 1s infinite;
-        }
-    
-        @keyframes blink {
-            0% { opacity: 1 }
-            50% { opacity: 0 }
-            100% { opacity: 1 }
-        }
-        .bg-light {
-            --bs-bg-opacity: 1;
-            color: #dbe5e9;
-           /* background: linear-gradient(144deg, rgb(122 158 173) 0%, rgb(36 72 93 / 12%) 100%);*/
-           background: linear-gradient(144deg, rgb(122 158 173) 0%, rgb(32 120 79) 100%);
-        }
-        .text-primary {
-            color: rgb(91 127 141) !important;
-        }
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark-clayne fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Clayne Okallo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#education">Education</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#" aria-label="Home">Clayne Okallo</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#education">Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-     <!-- Hero Section -->
-    <!--<header class="hero-section d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-4 mb-3">Clayne Okallo</h1>
-            <p class="lead mb-4">Tech Lead | Senior Software Engineer | Cloud-Native Solutions Expert</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Contact Me</a>
-        </div>
-    </header> -->
-
     <!-- Hero Section -->
-<header class="hero-section d-flex align-items-center position-relative overflow-hidden">
-    <div class="particles-background"></div>
-    
-    <div class="container position-relative text-center">
+    <header
+      class="hero-section d-flex align-items-center position-relative overflow-hidden"
+    >
+      <div class="container position-relative text-center">
         <div class="hero-content animate__animated animate__fadeInUp">
-            <h1 class="display-3 display-md-1 fw-bold mb-3 text-gradient">
-                Clayne Okallo
-            </h1>
-            
-            <div class="typewriter-container mb-4">
-                <p class="lead fs-3 fs-md-2 text-uppercase text-light opacity-75">
-                    <span class="typed-text"></span>
-                    <span class="cursor">&nbsp;</span>
-                </p>
-            </div>
+          <h1 class="display-3 display-md-1 fw-bold mb-3 text-gradient">
+            Clayne Okallo
+          </h1>
 
-            <div class="tech-stack mb-5">
-                <div class="d-flex justify-content-center gap-3 flex-wrap">
-                    <span class="badge bg-stack">Cloud Architecture</span>
-                    <span class="badge bg-stack">AI/ML Systems</span>
-                    <span class="badge bg-stack">DevOps Automation</span>
-                    <span class="badge bg-stack">IoT Solutions</span>
-                    <span class="badge bg-stack">Software Development</span>
-                </div>
-            </div>
+          <div class="typewriter-container mb-4" aria-live="polite">
+            <p class="lead fs-3 fs-md-2 text-uppercase text-light opacity-75">
+              <span class="typed-text" role="status"></span>
+              <span class="cursor visually-hidden">&nbsp;</span>
+            </p>
+          </div>
 
-            <div class="d-flex gap-3 justify-content-center">
-                <a href="#contact" class="btn btn-primary btn-lg px-5 py-3 rounded-pill hover-lift">
-                    Start a Project
-                    <i class="fas fa-arrow-right ms-2"></i>
-                </a>
-                <a href="https://linkedin.com/in/clayne-okallo-09234a96" 
-                   class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill hover-lift"
-                   target="_blank">
-                    <i class="fab fa-linkedin me-2"></i> Connect
-                </a>
+          <div class="tech-stack mb-5">
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <span class="badge bg-stack">Cloud Architecture</span>
+              <span class="badge bg-stack">AI/ML Systems</span>
+              <span class="badge bg-stack">DevOps Automation</span>
+              <span class="badge bg-stack">IoT Solutions</span>
+              <span class="badge bg-stack">Software Development</span>
             </div>
+          </div>
+
+          <div class="d-flex gap-3 justify-content-center">
+            <a
+              href="#contact"
+              class="btn btn-primary btn-lg px-5 py-3 rounded-pill hover-lift"
+              aria-label="Start a Project"
+            >
+              Start a Project
+              <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/clayne-okallo-09234a96"
+              class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill hover-lift"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Connect on LinkedIn"
+            >
+              <i class="fab fa-linkedin me-2" aria-hidden="true"></i> Connect
+            </a>
+          </div>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
     <!-- About Section -->
-<section id="about" class="section-padding  " style="color: rgb(68 93 99) !important;
-    background: #d7ae769c;">
-    <div class="container">
+    <section
+      id="about"
+      class="section-padding"
+      style="color: rgb(68 93 99) !important; background: #d7ae769c"
+    >
+      <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-5 mb-5 mb-lg-0">
-                <div class="profile-card position-relative">
-                    <img src="./claynepp.png" alt="Clayne Okallo" 
-                        class="img-fluid rounded-3 shadow-lg ">
-                    <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark-transparent" style="background: rgb(229 208 180 / 0%) !important;">
-                        <h3 class="mb-0">Clayne Okallo</h3>
-                        <p class="text-muted mb-0">Tech Lead & Cloud Architect</p>
-                    </div>
-                </div>
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div class="profile-card position-relative">
+              <img
+                src="./claynepp.png"
+                alt="Clayne Okallo"
+                class="img-fluid rounded-3 shadow-lg"
+              />
+              <div
+                class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark-transparent"
+                style="background: rgb(229 208 180 / 0%) !important"
+              >
+                <h3 class="mb-0">Clayne Okallo</h3>
+                <p class="text-muted mb-0">Tech Lead & Cloud Architect</p>
+              </div>
             </div>
+          </div>
 
-            <div class="col-lg-7">
-                <div class="ps-lg-4">
-                    <h2 class="display-5 fw-bold mb-4">Engineering Excellence Through Innovation</h2>
-                    <div class="achievement-grid mb-5">
-                        <div class="achievement-item border-end pe-4">
-                            <div class="display-6 fw-bold text-primary">15+</div>
-                            <div class="">Years Experience</div>
-                        </div>
-                        <div class="achievement-item border-end px-4">
-                            <div class="display-6 fw-bold text-primary">50+</div>
-                            <div class="">Projects Delivered</div>
-                        </div>
-                        <div class="achievement-item ps-4">
-                            <div class="display-6 fw-bold text-primary">10M+</div>
-                            <div class="">Users Impacted</div>
-                        </div>
-                    </div>
-
-                    <p class="lead mb-4">
-                        Seasoned technical leader specializing in architecting enterprise-grade solutions across cloud platforms, 
-                        IoT ecosystems, and intelligent automation systems. Proven track record in:
-                    </p>
-                    
-                    <div class="expertise-list row mb-5">
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <i class="fas fa-rocket text-primary me-2"></i>
-                                    <strong>Cloud-Native Architecture:</strong> AWS/GCP certified solutions
-                                </li>
-                                <li class="mb-3">
-                                    <i class="fas fa-robot text-primary me-2"></i>
-                                    <strong>Intelligent Automation:</strong> RPA systems with 40% efficiency gains
-                                </li>
-                                <li class="mb-3">
-                                    <i class="fas fa-shield-alt text-primary me-2"></i>
-                                    <strong>DevSecOps:</strong> CI/CD pipelines with embedded security
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-3">
-                                    <i class="fas fa-brain text-primary me-2"></i>
-                                    <strong>AI Engineering:</strong> Production-grade ML models
-                                </li>
-                                <li class="mb-3">
-                                    <i class="fas fa-network-wired text-primary me-2"></i>
-                                    <strong>Distributed Systems:</strong> Microservices at scale
-                                </li>
-                                <li class="mb-3">
-                                    <i class="fas fa-users-cog text-primary me-2"></i>
-                                    <strong>Technical Leadership:</strong> 15+ developer teams
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <a href="#contact" class="btn btn-primary btn-lg px-4 me-3">
-                            <i class="fas fa-paper-plane me-2"></i>Start Project
-                        </a>
-                        <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" 
-                            class="btn btn-outline-light btn-lg px-4" target="_blank" style="background: #7da0ae;">
-                            <i class="fab fa-linkedin me-2"></i>View Credentials
-                        </a>
-                    </div>
+          <div class="col-lg-7">
+            <div class="ps-lg-4">
+              <h2 class="display-5 fw-bold mb-4">
+                Engineering Excellence Through Innovation
+              </h2>
+              <div class="achievement-grid mb-5">
+                <div class="achievement-item border-end pe-4">
+                  <div class="display-6 fw-bold text-primary">15+</div>
+                  <div class="">Years Experience</div>
                 </div>
+                <div class="achievement-item border-end px-4">
+                  <div class="display-6 fw-bold text-primary">50+</div>
+                  <div class="">Projects Delivered</div>
+                </div>
+                <div class="achievement-item ps-4">
+                  <div class="display-6 fw-bold text-primary">10M+</div>
+                  <div class="">Users Impacted</div>
+                </div>
+              </div>
+
+              <p class="lead mb-4">
+                Seasoned technical leader specializing in architecting
+                enterprise-grade solutions across cloud platforms, IoT
+                ecosystems, and intelligent automation systems. Proven track
+                record in:
+              </p>
+
+              <div class="expertise-list row mb-5">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-rocket text-primary me-2"></i>
+                      <strong>Cloud-Native Architecture:</strong> AWS/GCP
+                      certified solutions
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-robot text-primary me-2"></i>
+                      <strong>Intelligent Automation:</strong> RPA systems with
+                      40% efficiency gains
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-shield-alt text-primary me-2"></i>
+                      <strong>DevSecOps:</strong> CI/CD pipelines with embedded
+                      security
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <i class="fas fa-brain text-primary me-2"></i>
+                      <strong>AI Engineering:</strong> Production-grade ML
+                      models
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-network-wired text-primary me-2"></i>
+                      <strong>Distributed Systems:</strong> Microservices at
+                      scale
+                    </li>
+                    <li class="mb-3">
+                      <i class="fas fa-users-cog text-primary me-2"></i>
+                      <strong>Technical Leadership:</strong> 15+ developer teams
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="action-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg px-4 me-3">
+                  <i class="fas fa-paper-plane me-2"></i>Start Project
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/clayne-okallo-09234a96"
+                  class="btn btn-outline-light btn-lg px-4"
+                  target="_blank"
+                  style="background: #7da0ae"
+                >
+                  <i class="fab fa-linkedin me-2"></i>View Credentials
+                </a>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- Experience Section -->
-<section id="experience" class="section-padding bg-light">
-    <div class="container">
+    <section id="experience" class="section-padding bg-light">
+      <div class="container">
         <h2 class="mb-5 text-center">Professional Experience</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <!-- Weencode -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Tech Mentor</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            Wecncode
-                            <span class="badge bg-success ms-2">Current</span>
-                        </h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Jan 2025 - Present
-                        </p>
-                        <ul>
-                            <li>Provide career guidance and technical mentorship</li>
-                            <li>Develop customized upskilling programs</li>
-                            <li>Share industry insights with aspiring professionals</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- Weencode -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Tech Mentor</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Wecncode
+                  <span class="badge bg-success ms-2">Current</span>
+                </h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Jan 2025 - Present
+                </p>
+                <ul>
+                  <li>Provide career guidance and technical mentorship</li>
+                  <li>Develop customized upskilling programs</li>
+                  <li>Share industry insights with aspiring professionals</li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- CanoalSystems -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Tech Lead</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">
-                            CanoalSystems
-                            <span class="badge bg-success ms-2">Current</span>
-                        </h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Jun 2019 - Present
-                        </p>
-                        <ul>
-                            <li>Lead full-cycle cross-platform software development</li>
-                            <li>Mentor developers in client-specific solutions</li>
-                            <li>Oversee cloud architecture and DevOps practices</li>
-                            <li class="text-primary">Technologies: JavaScript, Python, AWS, Docker</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- CanoalSystems -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Tech Lead</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  CanoalSystems
+                  <span class="badge bg-success ms-2">Current</span>
+                </h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Jun 2019 - Present
+                </p>
+                <ul>
+                  <li>Lead full-cycle cross-platform software development</li>
+                  <li>Mentor developers in client-specific solutions</li>
+                  <li>Oversee cloud architecture and DevOps practices</li>
+                  <li class="text-primary">
+                    Technologies: JavaScript, Python, AWS, Docker
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- Healthier Kenya -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Software Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Healthier Kenya</h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Sep 2020 - Dec 2022
-                        </p>
-                        <ul>
-                            <li>Developed insurance reporting solutions with Google Cloud</li>
-                            <li>Implemented data integrity optimization systems</li>
-                            <li class="text-primary">Technologies: .NET/C#, Python, SQL, Node.js</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- Healthier Kenya -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Senior Software Engineer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Healthier Kenya</h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Sep 2020 - Dec 2022
+                </p>
+                <ul>
+                  <li>
+                    Developed insurance reporting solutions with Google Cloud
+                  </li>
+                  <li>Implemented data integrity optimization systems</li>
+                  <li class="text-primary">
+                    Technologies: .NET/C#, Python, SQL, Node.js
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- Medbook Kenya -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Software Developer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Medbook Kenya Limited</h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Jun 2020 - Sep 2020
-                        </p>
-                        <ul>
-                            <li>Developed Dotnet H.M.S system and managed team workflows</li>
-                            <li>Ensured 24/7 technical support for released modules</li>
-                            <li class="text-primary">Technologies: .NET/C#, SQL Server</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- Medbook Kenya -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Senior Software Developer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Medbook Kenya Limited
+                </h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Jun 2020 - Sep 2020
+                </p>
+                <ul>
+                  <li>
+                    Developed Dotnet H.M.S system and managed team workflows
+                  </li>
+                  <li>Ensured 24/7 technical support for released modules</li>
+                  <li class="text-primary">
+                    Technologies: .NET/C#, SQL Server
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- Uzima Health -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Software Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Uzima Health</h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Jun 2018 - May 2020
-                        </p>
-                        <ul>
-                            <li>Developed Hospital Information Systems in MEVN stack</li>
-                            <li>Optimized tech solutions for medical ecosystem</li>
-                            <li class="text-primary">Technologies: MongoDB, Express.js, Vue.js, Node.js</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- Uzima Health -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Senior Software Engineer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Uzima Health</h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Jun 2018 - May 2020
+                </p>
+                <ul>
+                  <li>Developed Hospital Information Systems in MEVN stack</li>
+                  <li>Optimized tech solutions for medical ecosystem</li>
+                  <li class="text-primary">
+                    Technologies: MongoDB, Express.js, Vue.js, Node.js
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- CanoalSystems -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Software Engineer</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">CanoalSystems</h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Aug 2016 - Mar 2019
-                        </p>
-                        <ul>
-                            <li>Led international developer teams on various projects</li>
-                            <li>Owned product development lifecycle</li>
-                            <li class="text-primary">Technologies: JavaScript, Python, Docker</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- CanoalSystems -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Senior Software Engineer</h5>
+                <h6 class="card-subtitle mb-2 text-muted">CanoalSystems</h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Aug 2016 - Mar 2019
+                </p>
+                <ul>
+                  <li>Led international developer teams on various projects</li>
+                  <li>Owned product development lifecycle</li>
+                  <li class="text-primary">
+                    Technologies: JavaScript, Python, Docker
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
 
-            <!-- National Council -->
-            <div class="col">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">IT Support Technician</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">National Council for Population and Development</h6>
-                        <p class="text-muted small mb-3">
-                            <i class="fas fa-calendar-alt me-2"></i>Nov 2014 - May 2015
-                        </p>
-                        <ul>
-                            <li>Managed network security and user access control</li>
-                            <li>Maintained organization's software infrastructure</li>
-                        </ul>
-                    </div>
-                </div>
+          <!-- National Council -->
+          <div class="col">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">IT Support Technician</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  National Council for Population and Development
+                </h6>
+                <p class="text-muted small mb-3">
+                  <i class="fas fa-calendar-alt me-2"></i>Nov 2014 - May 2015
+                </p>
+                <ul>
+                  <li>Managed network security and user access control</li>
+                  <li>Maintained organization's software infrastructure</li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding" style="background: #e7cdab94;">
-        <div class="container">
-            <h2 class="mb-5 text-center">Technical Expertise</h2>
-            
-            <!-- AI/ML and Web Evolution -->
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">AI/ML Development</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-purple skill-badge">TensorFlow</span>
-                                <span class="badge bg-purple skill-badge">PyTorch</span>
-                                <span class="badge bg-purple skill-badge">Computer Vision</span>
-                                <span class="badge bg-purple skill-badge">NLP</span>
-                            </div>
-                            <p class="mt-2 small text-muted">
-                                Built ML pipelines handling 50k+ monthly interactions. Developed predictive maintenance systems and NLP chatbots for healthcare platforms.
-                            </p>
-                        </div>
-                    </div>
+    <section id="skills" class="section-padding" style="background: #e7cdab94">
+      <div class="container">
+        <h2 class="mb-5 text-center">Technical Expertise</h2>
+
+        <!-- AI/ML and Web Evolution -->
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">AI/ML Development</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-purple skill-badge">TensorFlow</span>
+                  <span class="badge bg-purple skill-badge">PyTorch</span>
+                  <span class="badge bg-purple skill-badge"
+                    >Computer Vision</span
+                  >
+                  <span class="badge bg-purple skill-badge">NLP</span>
                 </div>
-    
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Evolution</h5>
-                            <div class="d-flex flex-wrap mb-2">
-                                <span class="badge bg-web1 skill-badge">Web 1.0</span>
-                                <span class="badge bg-web2 skill-badge">Web 2.0</span>
-                                <span class="badge bg-web3 skill-badge">Web 3.0</span>
-                            </div>
-                            <p class="small text-muted">
-                                <strong>Web 1.0:</strong> Enterprise CMS with .NET<br>
-                                <strong>Web 2.0:</strong> MEAN stack health platforms<br>
-                                <strong>Web 3.0:</strong> Blockchain medical records
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p class="mt-2 small text-muted">
+                  Built ML pipelines handling 50k+ monthly interactions.
+                  Developed predictive maintenance systems and NLP chatbots for
+                  healthcare platforms.
+                </p>
+              </div>
             </div>
-    
-            <!-- DevOps & Cloud -->
-            <div class="row mb-4">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">DevOps & CI/CD</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-devops skill-badge">Jenkins</span>
-                                <span class="badge bg-devops skill-badge">ArgoCD</span>
-                                <span class="badge bg-devops skill-badge">Docker</span>
-                                <span class="badge bg-devops skill-badge">Kubernetes</span>
-                            </div>
-                            <p class="small text-muted mt-2">
-                                Automated 50+ daily deployments. Managed production clusters with Helm, reduced deployment times by 40%.
-                            </p>
-                        </div>
-                    </div>
+          </div>
+
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Web Evolution</h5>
+                <div class="d-flex flex-wrap mb-2">
+                  <span class="badge bg-web1 skill-badge">Web 1.0</span>
+                  <span class="badge bg-web2 skill-badge">Web 2.0</span>
+                  <span class="badge bg-web3 skill-badge">Web 3.0</span>
                 </div>
-    
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Cloud Infrastructure</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-cloud skill-badge">AWS</span>
-                                <span class="badge bg-cloud skill-badge">GCP</span>
-                                <span class="badge bg-cloud skill-badge">Terraform</span>
-                                <span class="badge bg-cloud skill-badge">Ansible</span>
-                            </div>
-                            <p class="small text-muted mt-2">
-                                Serverless architectures handling 1M+ requests. Managed multi-cloud environments with IaC.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Project Leadership</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-pm skill-badge">Scrum</span>
-                                <span class="badge bg-pm skill-badge">Jira</span>
-                                <span class="badge bg-pm skill-badge">SAFe</span>
-                                <span class="badge bg-pm skill-badge">Confluence</span>
-                            </div>
-                            <p class="small text-muted mt-2">
-                                95% sprint completion rate. Managed 50+ projects with distributed teams.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <p class="small text-muted">
+                  <strong>Web 1.0:</strong> Enterprise CMS with .NET<br />
+                  <strong>Web 2.0:</strong> MEAN stack health platforms<br />
+                  <strong>Web 3.0:</strong> Blockchain medical records
+                </p>
+              </div>
             </div>
-    
-            <!-- Technical Stack -->
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Core Languages</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-primary skill-badge">Python</span>
-                                <span class="badge bg-primary skill-badge">JavaScript</span>
-                                <span class="badge bg-primary skill-badge">C#</span>
-                                <span class="badge bg-primary skill-badge">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Frameworks</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-success skill-badge">.NET</span>
-                                <span class="badge bg-success skill-badge">Node.js</span>
-                                <span class="badge bg-success skill-badge">Vue.js</span>
-                                <span class="badge bg-success skill-badge">Express</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">IoT & Automation</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-warning skill-badge">Raspberry Pi</span>
-                                <span class="badge bg-warning skill-badge">Arduino</span>
-                                <span class="badge bg-warning skill-badge">RPA</span>
-                                <span class="badge bg-warning skill-badge">MQTT</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Architecture</h5>
-                            <div class="d-flex flex-wrap">
-                                <span class="badge bg-info skill-badge">Microservices</span>
-                                <span class="badge bg-info skill-badge">REST API</span>
-                                <span class="badge bg-info skill-badge">Event-Driven</span>
-                                <span class="badge bg-info skill-badge">Serverless</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="row mb-4">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">DevOps & CI/CD</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-devops skill-badge">Jenkins</span>
+                  <span class="badge bg-devops skill-badge">ArgoCD</span>
+                  <span class="badge bg-devops skill-badge">Docker</span>
+                  <span class="badge bg-devops skill-badge">Kubernetes</span>
+                </div>
+                <p class="small text-muted mt-2">
+                  Automated 50+ daily deployments. Managed production clusters
+                  with Helm, reduced deployment times by 40%.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Cloud Infrastructure</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-cloud skill-badge">AWS</span>
+                  <span class="badge bg-cloud skill-badge">GCP</span>
+                  <span class="badge bg-cloud skill-badge">Terraform</span>
+                  <span class="badge bg-cloud skill-badge">Ansible</span>
+                </div>
+                <p class="small text-muted mt-2">
+                  Serverless architectures handling 1M+ requests. Managed
+                  multi-cloud environments with IaC.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Project Leadership</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-pm skill-badge">Scrum</span>
+                  <span class="badge bg-pm skill-badge">Jira</span>
+                  <span class="badge bg-pm skill-badge">SAFe</span>
+                  <span class="badge bg-pm skill-badge">Confluence</span>
+                </div>
+                <p class="small text-muted mt-2">
+                  95% sprint completion rate. Managed 50+ projects with
+                  distributed teams.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Stack -->
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Core Languages</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-primary skill-badge">Python</span>
+                  <span class="badge bg-primary skill-badge">JavaScript</span>
+                  <span class="badge bg-primary skill-badge">C#</span>
+                  <span class="badge bg-primary skill-badge">SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Frameworks</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-success skill-badge">.NET</span>
+                  <span class="badge bg-success skill-badge">Node.js</span>
+                  <span class="badge bg-success skill-badge">Vue.js</span>
+                  <span class="badge bg-success skill-badge">Express</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">IoT & Automation</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-warning skill-badge">Raspberry Pi</span>
+                  <span class="badge bg-warning skill-badge">Arduino</span>
+                  <span class="badge bg-warning skill-badge">RPA</span>
+                  <span class="badge bg-warning skill-badge">MQTT</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5 class="card-title">Architecture</h5>
+                <div class="d-flex flex-wrap">
+                  <span class="badge bg-info skill-badge">Microservices</span>
+                  <span class="badge bg-info skill-badge">REST API</span>
+                  <span class="badge bg-info skill-badge">Event-Driven</span>
+                  <span class="badge bg-info skill-badge">Serverless</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Education Section -->
- <section id="education" class="section-padding bg-light education-section">
-    <div class="container">
+    <section id="education" class="section-padding bg-light education-section">
+      <div class="container">
         <h2 class="mb-5 text-center">Education</h2>
         <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5>BSc. Computer Science</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Kenyatta University</h6>
-                        <p class="text-muted">2011 - 2015</p>
-                        <p>Studied core principles of Computer Science, including algorithms, data structures, software development, and system architecture.</p>
-                    </div>
-                </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5>BSc. Computer Science</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Kenyatta University
+                </h6>
+                <p class="text-muted">2011 - 2015</p>
+                <p>
+                  Studied core principles of Computer Science, including
+                  algorithms, data structures, software development, and system
+                  architecture.
+                </p>
+              </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5>Specialization in Robotics AI & IoT</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Presbyterian University of East Africa</h6>
-                        <p class="text-muted">2014 - 2016</p>
-                        <p>Focused on Robotics and Artificial Intelligence, developing automation solutions using Raspberry Pi and Arduino for real-world applications.</p>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h5>Specialization in Robotics AI & IoT</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                  Presbyterian University of East Africa
+                </h6>
+                <p class="text-muted">2014 - 2016</p>
+                <p>
+                  Focused on Robotics and Artificial Intelligence, developing
+                  automation solutions using Raspberry Pi and Arduino for
+                  real-world applications.
+                </p>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-  <!-- Contact Section -->
-<section id="contact" class="section-padding " style="background:#6e898f;">
-    <div class="container">
-        <h2 class="mb-5 text-center" style="color:#e7cdab;">Get in Touch</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding" style="background: #6e898f">
+      <div class="container">
+        <h2 class="mb-5 text-center" style="color: #e7cdab">Get in Touch</h2>
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="card shadow border-0" style="background: #e7cdab;">
-                    <div class="card-body p-5">
-                        <form id="contactForm" action="https://formspree.io/f/manqzdkg" method="POST">
-                            <div class="mb-4">
-                                <label for="name" class="form-label">Your Name</label>
-                                <input type="text" class="form-control rounded-pill" id="name" name="name" 
-                                    placeholder="John Doe" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control rounded-pill" id="email" name="email"
-                                    placeholder="name@example.com" required>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label for="message" class="form-label">Your Message</label>
-                                <textarea class="form-control" id="message" name="message" 
-                                    rows="4" placeholder="Hello Clayne..." required></textarea>
-                            </div>
-                            
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary btn-lg rounded-pill">
-                                    <span class="submit-text">Send Message</span>
-                                    <div class="spinner-border spinner-border-sm d-none" role="status">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
-                                </button>
-                            </div>
-                            
-                            <div class="alert alert-success mt-4 d-none" id="successAlert">
-                                Message sent successfully! I'll respond within 24 hours.
-                            </div>
-                            
-                            <div class="alert alert-danger mt-4 d-none" id="errorAlert">
-                                Error sending message. Please try again or email directly at clayne.co25@gmail.com
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+          <div class="col-lg-8">
+            <div class="card shadow border-0" style="background: #e7cdab">
+              <div class="card-body p-5">
+                <form
+                  id="contactForm"
+                  action="https://formspree.io/f/manqzdkg"
+                  method="POST"
+                >
+                  <div class="mb-4">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input
+                      type="text"
+                      class="form-control rounded-pill"
+                      id="name"
+                      name="name"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
 
-<!-- Footer -->
-<footer class="bg-dark-clayne text-white py-5">
-    <div class="container text-center">
+                  <div class="mb-4">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control rounded-pill"
+                      id="email"
+                      name="email"
+                      placeholder="name@example.com"
+                      required
+                    />
+                  </div>
+
+                  <div class="mb-4">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="4"
+                      placeholder="Hello Clayne..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="d-grid">
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-lg rounded-pill"
+                    >
+                      <span class="submit-text">Send Message</span>
+                      <div
+                        class="spinner-border spinner-border-sm d-none"
+                        role="status"
+                      >
+                        <span class="visually-hidden">Loading...</span>
+                      </div>
+                    </button>
+                  </div>
+
+                  <div
+                    class="alert alert-success mt-4 d-none"
+                    id="successAlert"
+                  >
+                    Message sent successfully! I'll respond within 24 hours.
+                  </div>
+
+                  <div class="alert alert-danger mt-4 d-none" id="errorAlert">
+                    Error sending message. Please try again or email directly at
+                    clayne.co25@gmail.com
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-clayne text-white py-5">
+      <div class="container text-center">
         <div class="social-links mb-4">
-            <a href="https://www.linkedin.com/in/clayne-okallo-09234a96" class="btn btn-outline-light btn-lg rounded-circle mx-2"
-                target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/okallo" class="btn btn-outline-light btn-lg rounded-circle mx-2"
-                target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:clayne.co25@gmail.com" class="btn btn-outline-light btn-lg rounded-circle mx-2">
-                <i class="fas fa-envelope"></i>
-            </a>
+          <a
+            href="https://www.linkedin.com/in/clayne-okallo-09234a96"
+            class="btn btn-outline-light btn-lg rounded-circle mx-2"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/okallo"
+            class="btn btn-outline-light btn-lg rounded-circle mx-2"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:clayne.co25@gmail.com"
+            class="btn btn-outline-light btn-lg rounded-circle mx-2"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
         <p class="mb-0">&copy; 2013 Clayne Okallo. All rights reserved.</p>
         <p class="mt-2">Nairobi, Kenya</p>
-    </div>
-</footer>
+      </div>
+    </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      async
+      defer
+    ></script>
+
+    <!-- Optimized Scripts -->
     <script>
-        // Form submission handling
-        const form = document.getElementById('contactForm');
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const spinner = submitBtn.querySelector('.spinner-border');
-        const submitText = submitBtn.querySelector('.submit-text');
-        const successAlert = document.getElementById('successAlert');
-        const errorAlert = document.getElementById('errorAlert');
-    
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            submitText.textContent = 'Sending...';
-            spinner.classList.remove('d-none');
-            submitBtn.disabled = true;
-    
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: new FormData(form),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-    
-                if (response.ok) {
-                    successAlert.classList.remove('d-none');
-                    errorAlert.classList.add('d-none');
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            } catch (error) {
-                successAlert.classList.add('d-none');
-                errorAlert.classList.remove('d-none');
-            } finally {
-                submitText.textContent = 'Send Message';
-                spinner.classList.add('d-none');
-                submitBtn.disabled = false;
-            }
+      // Smooth scroll polyfill
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
         });
-    </script>
-    <script>
-        // Typewriter effect
-        const typedTextSpan = document.querySelector(".typed-text");
-        const cursorSpan = document.querySelector(".cursor");
-        
-        const textArray = ["Enterprise Architect", "Cloud Native Expert", "AI Solutions Developer", "Technical Leader","Senior Software Engineer"];
-        const typingDelay = 200;
-        const erasingDelay = 100;
-        const newTextDelay = 2000;
-        let textArrayIndex = 0;
-        let charIndex = 0;
-    
-        function type() {
-            if (charIndex < textArray[textArrayIndex].length) {
-                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(type, typingDelay);
-            } else {
-                setTimeout(erase, newTextDelay);
-            }
-        }
-    
-        function erase() {
-            if (charIndex > 0) {
-                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-                charIndex--;
-                setTimeout(erase, erasingDelay);
-            } else {
-                textArrayIndex++;
-                if(textArrayIndex>=textArray.length) textArrayIndex=0;
-                setTimeout(type, typingDelay + 1100);
-            }
-        }
-    
-        document.addEventListener("DOMContentLoaded", function() {
-            if(textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+
+      // Intersection Observer for lazy loading
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+          }
         });
+      });
+
+      document.querySelectorAll("img[data-src]").forEach((img) => {
+        observer.observe(img);
+      });
     </script>
-</body>
+    <!-- Separate JS file for main functionality -->
+    <script src="main.min.js" defer></script>
+  </body>
 </html>
