@@ -130,8 +130,10 @@
         }
 
         .hero-section {
+            /*height: 80vh;
+            background: linear-gradient(65deg, rgba(12, 24, 41, 0.56) 0%, rgb(36 72 93 / 12%) 100%), url(./background2pp.jpg) center / cover;*/
             height: 80vh;
-            background: linear-gradient(65deg, rgba(12, 24, 41, 0.56) 0%, rgb(36 72 93 / 12%) 100%), url(./background2pp.jpg) center / cover;
+            background: linear-gradient(65deg, rgb(33 133 68) 0%, rgb(28 80 111) 100%);
         }
         .education-section {
             height: 60vh;
@@ -180,7 +182,11 @@
         .bg-light {
             --bs-bg-opacity: 1;
             color: #dbe5e9;
-            background: linear-gradient(144deg, rgb(122 158 173) 0%, rgb(36 72 93 / 12%) 100%);
+           /* background: linear-gradient(144deg, rgb(122 158 173) 0%, rgb(36 72 93 / 12%) 100%);*/
+           background: linear-gradient(144deg, rgb(122 158 173) 0%, rgb(32 120 79) 100%);
+        }
+        .text-primary {
+            color: rgb(91 127 141) !important;
         }
     </style>
 </head>
@@ -256,14 +262,15 @@
 </header>
 
     <!-- About Section -->
-<section id="about" class="section-padding  " style="color: rgb(45 55 72) !important;">
+<section id="about" class="section-padding  " style="color: rgb(68 93 99) !important;
+    background: #d7ae769c;">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <div class="profile-card position-relative">
                     <img src="./claynepp.png" alt="Clayne Okallo" 
-                        class="img-fluid rounded-3 shadow-lg border border-3 border-white">
-                    <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark-transparent">
+                        class="img-fluid rounded-3 shadow-lg ">
+                    <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark-transparent" style="background: rgb(229 208 180 / 0%) !important;">
                         <h3 class="mb-0">Clayne Okallo</h3>
                         <p class="text-muted mb-0">Tech Lead & Cloud Architect</p>
                     </div>
@@ -484,7 +491,7 @@
 </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding">
+    <section id="skills" class="section-padding" style="background: #e7cdab94;">
         <div class="container">
             <h2 class="mb-5 text-center">Technical Expertise</h2>
             
@@ -641,15 +648,42 @@
         </div>
     </section>
 
-   
+    <!-- Education Section -->
+ <section id="education" class="section-padding bg-light education-section">
+    <div class="container">
+        <h2 class="mb-5 text-center">Education</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5>BSc. Computer Science</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Kenyatta University</h6>
+                        <p class="text-muted">2011 - 2015</p>
+                        <p>Studied core principles of Computer Science, including algorithms, data structures, software development, and system architecture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                    <div class="card-body">
+                        <h5>Specialization in Robotics AI & IoT</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Presbyterian University of East Africa</h6>
+                        <p class="text-muted">2014 - 2016</p>
+                        <p>Focused on Robotics and Artificial Intelligence, developing automation solutions using Raspberry Pi and Arduino for real-world applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   <!-- Contact Section -->
-<section id="contact" class="section-padding bg-light">
+<section id="contact" class="section-padding " style="background:#6e898f;">
     <div class="container">
-        <h2 class="mb-5 text-center">Get in Touch</h2>
+        <h2 class="mb-5 text-center" style="color:#e7cdab;">Get in Touch</h2>
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow border-0">
+                <div class="card shadow border-0" style="background: #e7cdab;">
                     <div class="card-body p-5">
                         <form id="contactForm" action="https://formspree.io/f/manqzdkg" method="POST">
                             <div class="mb-4">
@@ -693,32 +727,7 @@
         </div>
     </div>
 </section>
- <!-- Education Section -->
- <section id="education" class="section-padding">
-    <div class="container">
-        <!-- <h2 class="mb-5 text-center">Education</h2>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5>BSc. Computer Science</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Kenyatta University</h6>
-                        <p class="text-muted">2011 - 2015</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100 shadow">
-                    <div class="card-body">
-                        <h5>Computer Science</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Presbyterian University of East Africa</h6>
-                        <p class="text-muted">2014 - 2016</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-    </div>
-</section>
+
 <!-- Footer -->
 <footer class="bg-dark-clayne text-white py-5">
     <div class="container text-center">
